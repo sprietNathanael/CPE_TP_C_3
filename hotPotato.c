@@ -33,12 +33,19 @@ Player playGame()
 	{
 		// Pick a random number between 1 and POTATO_LIFE_MAX
 		int potatoLife = (rand()%(POTATO_LIFE_MAX-1))+1;
+		// Save the winner
 		winnerOfRound = playRound(potatoLife);
+		// The previous player of the looser takes for its next player the next player of the looser
 		playerArray[currentPlayer.previousPlayer].nextPlayer = currentPlayer.nextPlayer;
+		// The next player of the looser takes for its previous player the previous player of the looser
 		playerArray[currentPlayer.nextPlayer].previousPlayer = currentPlayer.previousPlayer;
+		// Print the result
 		printf(ANSI_COLOR_RED"(%d->%s->%d) lost : %d.N = %d ; %d.P = %d \n"ANSI_COLOR_RESET,currentPlayer.previousPlayer,currentPlayer.name,currentPlayer.nextPlayer,currentPlayer.previousPlayer, playerArray[currentPlayer.previousPlayer].nextPlayer,currentPlayer.nextPlayer,playerArray[currentPlayer.nextPlayer].previousPlayer);
+		// Set the current player to the winner
 		currentPlayer = winnerOfRound;
+	// If the current player has the value for next and previous player, it means he's the last one
 	}while(currentPlayer.nextPlayer != currentPlayer.previousPlayer);
+	// Return the winner of the game
 	return(currentPlayer);
 }
 
@@ -60,6 +67,7 @@ Player playRound(int potatoLife)
 		{
 			currentPlayer = playerArray[currentPlayer.previousPlayer];
 		}
+		// Print the result
 		printf("\t%d : %s -> %s\n",i,lastPlayerToPlay.name, currentPlayer.name);
 	}
 	return(lastPlayerToPlay);
