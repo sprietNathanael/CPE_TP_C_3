@@ -25,7 +25,7 @@ void initialiseArray(int playerQuantity)
 	}
 }
 
-Player playGame()
+Player playGame(int roundQuantity)
 {
 	currentPlayer = playerArray[0];
 	Player winnerOfRound;
@@ -47,6 +47,30 @@ Player playGame()
 	}while(currentPlayer.nextPlayer != currentPlayer.previousPlayer);
 	// Return the winner of the game
 	return(currentPlayer);
+}
+
+void playMultiGame(int roundQuantity)
+{
+	int roundIncrement = 0;
+	Player winnerOfRound;
+	currentPlayer = playerArray[0];
+	for(roundIncrement = 0;roundIncrement < roundQuantity; roundIncrement++)
+	{
+		printf(ANSI_COLOR_BLUE"Round n° : %d\n"ANSI_COLOR_RESET,roundIncrement+1);
+		// Pick a random number between 1 and POTATO_LIFE_MAX
+		int potatoLife = (rand()%(POTATO_LIFE_MAX-1))+1;
+		// Save the winner
+		winnerOfRound = playRound(potatoLife);
+		// Print the result
+		printf(ANSI_COLOR_RED"%s lost\n"ANSI_COLOR_RESET,currentPlayer.name);
+		// Save the looser name into the file
+		if(roundQuantity > 1)
+		{
+			//saveTheLooserName(currentPlayer.name);
+		}
+		// Set the current player to the winner
+		currentPlayer = winnerOfRound;
+	}
 }
 
 Player playRound(int potatoLife)

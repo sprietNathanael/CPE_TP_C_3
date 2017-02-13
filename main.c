@@ -66,7 +66,14 @@ int main()
 	}while(userEntryLoop);
 	Player winner;
 	initialiseArray(playerQuantity);
-	winner = playGame();
-	printf(ANSI_COLOR_GREEN"%s wins the game !\n"ANSI_COLOR_RESET,winner.name);
+	if(roundQuantity < 2)
+	{
+		winner = playGame();
+		printf(ANSI_COLOR_GREEN"%s wins the game !\n"ANSI_COLOR_RESET,winner.name);
+	}
+	else
+	{
+		playMultiGame(roundQuantity);
+	}
 	return 0;
 }

@@ -13,4 +13,6 @@
 #ifndef FILE_H
 #define FILE_H
 
+void writeNameIntoFile(char* name);
+
 #endif
