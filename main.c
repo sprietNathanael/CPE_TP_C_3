@@ -14,7 +14,18 @@
 
 int main()
 {
+	int user_entry = 0;
+	int userEntryLoop = 1;
 	int playerQuantity = 5;
+	do
+	{
+		printf("Combien de joueurs (de 1 à %d)?\n",MAX_PLAYER);
+		scanf("%d", &playerQuantity);
+		if(playerQuantity == 0 || playerQuantity > MAX_PLAYER)
+		{
+			printf("Entrée invalide : %d!\n",playerQuantity);
+		}
+	}while(playerQuantity == 0 || playerQuantity > MAX_PLAYER);
 	Player winner;
 	initialiseArray(playerQuantity);
 	winner = playGame();
