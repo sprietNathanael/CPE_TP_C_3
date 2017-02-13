@@ -21,3 +21,8 @@ void saveTheLooserName(char* name)
 	fprintf(loosersFile, "%s\n", name);
 	fclose(loosersFile);
 }
+
+void printBestThreePlayers()
+{
+	system("sort loosers.txt| uniq -c | sort -n | sed -r 's/[0-9]+\ //' | head -n 3");
+}

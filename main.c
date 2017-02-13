@@ -74,6 +74,8 @@ int main()
 	else
 	{
 		playMultiGame(roundQuantity);
+		printf("Les trois meilleurs joueurs : \n");
+		printBestThreePlayers();
 	}
 	return 0;
 }

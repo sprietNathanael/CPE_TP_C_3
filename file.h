@@ -20,4 +20,9 @@
  */
 void saveTheLooserName(char* name);
 
+/**
+ * @brief      Print the best three players from file (the leass appearing players)
+ */
+void printBestThreePlayers();
+
 #endif
