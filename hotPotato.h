@@ -10,7 +10,11 @@
 #ifndef HOT_POTATO_H
 #define HOT_POTATO_H
 
+#include <stdlib.h>
+#include <stdio.h>
+
 #include <time.h>
+#include <string.h>
 #define WORD_MAX_SIZE 100
 #define POTATO_LIFE_MAX 20
 #define MAX_PLAYER	50
@@ -26,8 +30,8 @@
 struct player
 {
 	char name[WORD_MAX_SIZE];/*!< The player's name itself */
-	int rightPlayer;/*!< The player's right neighbour */
-	int leftPlayer;/*!< The player's left neighbour */
+	int nextPlayer;/*!< The player's next neighbour */
+	int previousPlayer;/*!< The player's previous neighbour */
 };
 
 /**
@@ -38,9 +42,61 @@ typedef struct player Player;
 /*
 ***************************** Static variables *************************
 */
-
 static int playerQuantity;
 static Player playerArray[MAX_PLAYER];
+static char *namesArray[] =
+{
+	"Patrina",
+	"Annie",
+	"Tyesha",
+	"Thuy",
+	"Eugenie",
+	"Neil",
+	"Fletcher",
+	"Moira",
+	"Jacquie",
+	"Janey",
+	"Leota",
+	"Wendi",
+	"Tonette",
+	"Ted",
+	"Madge",
+	"Roseanne",
+	"Tyisha",
+	"Kristle",
+	"Melissia",
+	"Susanne",
+	"Hee",
+	"Tomas",
+	"Sol",
+	"Adan",
+	"Mireya",
+	"Priscilla",
+	"Mahalia",
+	"Allyn",
+	"Mitch",
+	"Frances",
+	"Alejandra",
+	"Jerrod",
+	"Tatyana",
+	"Dorothea",
+	"Isidra",
+	"Inger",
+	"Dagny",
+	"Rick",
+	"Matthew",
+	"Enrique",
+	"Yadira",
+	"Gay",
+	"Cathrine",
+	"Kendal",
+	"Serena",
+	"Doria",
+	"Vicki",
+	"Nilda",
+	"Jonie",
+	"Lucilla"
+};
 
 /*
 ***************************** Functions *************************

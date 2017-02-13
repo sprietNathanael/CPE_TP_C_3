@@ -15,8 +15,8 @@
 int main(int argc, char const *argv[])
 {
 	int playerQuantity = 5;
-	Player winner;
+	// Player winner;
 	initialiseArray(playerQuantity);
-	winner = playGame();
+	// winner = playGame();
 	return 0;
 }
