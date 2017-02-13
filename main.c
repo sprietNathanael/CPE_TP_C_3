@@ -12,11 +12,12 @@
 #include <time.h>
 #include "hotPotato.h"
 
-int main(int argc, char const *argv[])
+int main()
 {
 	int playerQuantity = 5;
-	// Player winner;
+	Player winner;
 	initialiseArray(playerQuantity);
-	// winner = playGame();
+	winner = playGame();
+	printf(ANSI_COLOR_GREEN"%s wins the game !\n"ANSI_COLOR_RESET,winner.name);
 	return 0;
 }

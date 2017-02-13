@@ -19,6 +19,10 @@
 #define POTATO_LIFE_MAX 20
 #define MAX_PLAYER	50
 
+#define ANSI_COLOR_RED "\x1b[31m"
+#define ANSI_COLOR_GREEN "\x1b[32m"
+#define ANSI_COLOR_RESET "\x1b[0m"
+
 /*
 ***************************** Structures *************************
 */
@@ -42,7 +46,7 @@ typedef struct player Player;
 /*
 ***************************** Static variables *************************
 */
-static int playerQuantity;
+static Player currentPlayer;
 static Player playerArray[MAX_PLAYER];
 static char *namesArray[] =
 {
@@ -120,7 +124,9 @@ Player playGame();
  * @brief      Play a single round
  *
  * @param[in]  potatoLife  The potato life for this round
+ *
+ * @return     The last player to have sent the potato
  */
-void playRound(int potatoLife);
+Player playRound(int potatoLife);
 
 #endif
