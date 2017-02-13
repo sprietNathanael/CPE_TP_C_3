@@ -17,9 +17,7 @@
 #include <string.h>
 #include "file.h"
 
-#define WORD_MAX_SIZE 100
 #define POTATO_LIFE_MAX 20
-#define MAX_PLAYER	50
 
 #define ANSI_COLOR_RED "\x1b[31m"
 #define ANSI_COLOR_GREEN "\x1b[32m"
