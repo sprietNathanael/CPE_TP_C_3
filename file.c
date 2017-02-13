@@ -8,3 +8,16 @@
  */
 
 #include "file.h"
+
+void saveTheLooserName(char* name)
+{
+	FILE *loosersFile = fopen("loosers.txt", "a+");
+	if (loosersFile == NULL)
+	{
+	    printf("Error opening file!\n");
+	    exit(1);
+	}
+
+	fprintf(loosersFile, "%s\n", name);
+	fclose(loosersFile);
+}

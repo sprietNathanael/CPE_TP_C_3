@@ -13,6 +13,11 @@
 #ifndef FILE_H
 #define FILE_H
 
-void writeNameIntoFile(char* name);
+/**
+ * @brief      Saves the looser name.
+ *
+ * @param      name  The name of the looser player
+ */
+void saveTheLooserName(char* name);
 
 #endif

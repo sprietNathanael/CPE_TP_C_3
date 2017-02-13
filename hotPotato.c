@@ -25,7 +25,7 @@ void initialiseArray(int playerQuantity)
 	}
 }
 
-Player playGame(int roundQuantity)
+Player playGame()
 {
 	currentPlayer = playerArray[0];
 	Player winnerOfRound;
@@ -66,7 +66,7 @@ void playMultiGame(int roundQuantity)
 		// Save the looser name into the file
 		if(roundQuantity > 1)
 		{
-			//saveTheLooserName(currentPlayer.name);
+			saveTheLooserName(currentPlayer.name);
 		}
 		// Set the current player to the winner
 		currentPlayer = winnerOfRound;
