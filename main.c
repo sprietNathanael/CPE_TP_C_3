@@ -9,10 +9,14 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include "hotPotato.h"
 
 int main(int argc, char const *argv[])
 {
-
+	int playerQuantity = 5;
+	Player winner;
+	initialiseArray(playerQuantity);
+	winner = playGame();
 	return 0;
 }

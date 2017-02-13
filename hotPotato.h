@@ -10,7 +10,10 @@
 #ifndef HOT_POTATO_H
 #define HOT_POTATO_H
 
+#include <time.h>
 #define WORD_MAX_SIZE 100
+#define POTATO_LIFE_MAX 20
+#define MAX_PLAYER	50
 
 /*
 ***************************** Structures *************************
@@ -31,5 +34,37 @@ struct player
 * @brief      A type defined over the Player structure
 */
 typedef struct player Player;
+
+/*
+***************************** Static variables *************************
+*/
+
+static int playerQuantity;
+static Player playerArray[MAX_PLAYER];
+
+/*
+***************************** Functions *************************
+*/
+
+/**
+ * @brief      Initialise the players array
+ *
+ * @param[in]  playerQuantity  The player quantity
+ */
+void initialiseArray(int playerQuantity);
+
+/**
+ * @brief      Play a whole game
+ *
+ * @return     The player that wins the game
+ */
+Player playGame();
+
+/**
+ * @brief      Play a single round
+ *
+ * @param[in]  potatoLife  The potato life for this round
+ */
+void playRound(int potatoLife);
 
 #endif
