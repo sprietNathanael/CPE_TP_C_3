@@ -15,6 +15,8 @@
 
 #include <time.h>
 #include <string.h>
+#include "file.h"
+
 #define WORD_MAX_SIZE 100
 #define POTATO_LIFE_MAX 20
 #define MAX_PLAYER	50

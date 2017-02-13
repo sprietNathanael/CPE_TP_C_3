@@ -4,14 +4,17 @@ EXEC=hotPotatoGame
 
 all: $(EXEC)
 
-hotPotato.o: hotPotato.c
-	$(CC) -o hotPotato.o -c hotPotato.c $(CFLAGS)
-
-hotPotatoGame: main.o hotPotato.o
-	$(CC) -o hotPotatoGame main.o hotPotato.o
+hotPotatoGame: main.o hotPotato.o file.o
+	$(CC) -o hotPotatoGame main.o hotPotato.o file.o
 
 main.o: main.c hotPotato.h
 	$(CC) -o main.o -c main.c $(CFLAGS)
+
+hotPotato.o: hotPotato.c file.h
+	$(CC) -o hotPotato.o -c hotPotato.c $(CFLAGS)
+
+file.o: file.c
+	$(CC) -o file.o -c file.c $(CFLAGS)
 
 clean:
 	rm -rf *.o *.h.gch
